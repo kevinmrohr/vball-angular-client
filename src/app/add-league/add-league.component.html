@@ -2,7 +2,7 @@
 
   <mat-form-field>
     <mat-select placeholder="Day of Week" [formControl]="dayOfWeekControl" (selectionChange)="onDayOfWeekChange()">
-      <mat-option *ngFor="let day of daysOfWeek" [value]="day.dayNum">
+      <mat-option *ngFor="let day of daysOfWeek" >
         {{day.desc}}
       </mat-option>
     </mat-select>
@@ -12,7 +12,7 @@
 
   <mat-form-field>
     <mat-select placeholder="Start Date" [formControl]="startDateControl">
-      <mat-option *ngFor="let date of potentialStartDates()" [value]="date">
+      <mat-option *ngFor="let date of potentialStartDates()">
         {{date}}
       </mat-option>
     </mat-select>
@@ -21,7 +21,7 @@
 
   <mat-form-field>
     <mat-select placeholder="End Date" [formControl]="endDateControl" >
-      <mat-option *ngFor="let date of potentialEndDates()" [value]="date">
+      <mat-option *ngFor="let date of potentialEndDates()" >
         {{date}}
       </mat-option>
     </mat-select>
@@ -30,7 +30,7 @@
 
   <mat-form-field>
     <mat-select placeholder="League Type" [formControl]="dayOfWeekControl">
-      <mat-option *ngFor="let leagueType of leagueTypes" [value]="leagueType">
+      <mat-option *ngFor="let leagueType of leagueTypes" >
         {{leagueType}}
       </mat-option>
     </mat-select>
