@@ -1,0 +1,39 @@
+<div class="form-container">
+
+  <mat-form-field>
+    <mat-select placeholder="Day of Week" [formControl]="dayOfWeekControl" (selectionChange)="onDayOfWeekChange()">
+      <mat-option *ngFor="let day of daysOfWeek" [value]="day.dayNum">
+        {{day.desc}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="dayOfWeekControl.hasError('required')">Please choose a day of the week</mat-error>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-select placeholder="Start Date" [formControl]="startDateControl">
+      <mat-option *ngFor="let date of potentialStartDates()" [value]="date">
+        {{date}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="startDateControl.hasError('required')">Please choose a start date</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="End Date" [formControl]="endDateControl" >
+      <mat-option *ngFor="let date of potentialEndDates()" [value]="date">
+        {{date}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="endDateControl.hasError('required')">Please choose an end date</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-select placeholder="League Type" [formControl]="dayOfWeekControl">
+      <mat-option *ngFor="let leagueType of leagueTypes" [value]="leagueType">
+        {{leagueType}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="dayOfWeekControl.hasError('required')">Please choose a league type</mat-error>
+  </mat-form-field>
+</div>

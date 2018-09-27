@@ -1,0 +1,7 @@
+.holiday-date {
+    background-color: firebrick;
+}
+.form-container {
+    display: flex;
+    flex-direction: column;
+}

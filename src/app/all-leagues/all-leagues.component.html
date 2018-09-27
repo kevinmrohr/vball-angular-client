@@ -1,0 +1,39 @@
+<mat-grid-list cols="3" rowHeight="2:1">
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-select placeholder="Day of Week" [(ngModel)]="selectedDayOfWeek" multiple>
+        <mat-option *ngFor="let day of daysOfWeek" [value]="day">
+          {{day}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-select placeholder="Start Date" [(ngModel)]="startDate" multiple>
+        <mat-option *ngFor="let date of futureDates" [value]="date" class="{{isHoliday(date) ? 'holiday-date' : ''}}">
+          {{date}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <mat-form-field>
+      <mat-select placeholder="League Type" [(ngModel)]="selectedLeagueType" multiple>
+        <mat-option *ngFor="let leagueType of leagueTypes" [value]="leagueType">
+          {{leagueType}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-list>
+  <mat-list-item *ngFor="let league of getFilteredLeagues()">
+    <a routerLink="/league/details/{{league.id}}">{{league.name}}</a>
+  </mat-list-item>
+</mat-list>
+
+<button mat-raised-button routerLink="/league/add">Add League</button>

@@ -1,28 +1,41 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from "@angular/common/http";
-import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/heroes.component';
-import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { AppRoutingModule } from './app-routing.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import {AppComponent} from './app.component';
+import {FormsModule} from '@angular/forms';
+import {AppRoutingModule} from './app-routing.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import {MatCheckbox, MatRippleModule, MatButton, MatBadge, MatList, MatListItem} from "@angular/material";
+import {
+  MatBadge,
+  MatCheckbox,
+  MatDatepickerModule,
+  MatFormFieldModule,
+  MatGridList,
+  MatGridTile,
+  MatInputModule,
+  MatList,
+  MatListItem,
+  MatNativeDateModule,
+  MatRippleModule,
+  MatSelectModule
+} from "@angular/material";
+import {ReactiveFormsModule} from "@angular/forms";
+import {OverlayModule} from '@angular/cdk/overlay';
+import {ScrollDispatchModule} from '@angular/cdk/scrolling';
+
+import {AllLeaguesComponent} from './all-leagues/all-leagues.component';
+import {LeagueDetailsComponent} from './league-details/league-details.component';
+import {AddLeagueComponent} from './add-league/add-league.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
     MatCheckbox,
-    MatButton,
     MatBadge,
     MatList,
-    MatListItem
+    MatListItem,
+    AllLeaguesComponent,
+    MatGridList, MatGridTile, LeagueDetailsComponent, AddLeagueComponent
   ],
   imports: [
     BrowserModule,
@@ -30,9 +43,18 @@ import {MatCheckbox, MatRippleModule, MatButton, MatBadge, MatList, MatListItem}
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    MatRippleModule
+    MatRippleModule,
+    OverlayModule,
+    ScrollDispatchModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
